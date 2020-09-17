@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-egeecoronis" version="1.0.0">
+   <name>EgeeCoronis</name>
+    <description>Plugin e-GEE de lecture et programmation des modules Coronis</description>
+    <license>e-GEE S.A.S</license>
+    <keywords>egee, coronis, plugin, cordova</keywords>
+   <js-module name="EgeeCoronis" src="www/EgeeCoronis.js">
+      <clobbers target="cordova.plugins.EgeeCoronis" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="EgeeCoronis">
+            <param name="android-package" value="cordova-plugin-egeecoronis.EgeeCoronis" />
+         </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+      <source-file src="src/android/EgeeCoronis.java" target-dir="src/cordova-plugin-egeecoronis/EgeeCoronis" />
+      <source-file src="src/android/libs/com.coronis.sdk.domain_1.0.2.jar" target-dir="app/libs/"/>
+      <source-file src="src/android/libs/com.coronis.sdk.protocol.api.jar" target-dir="app/libs/"/>
+      <source-file src="src/android/libs/com.coronis.sdk.protocol.waveport_2.1.0.jar" target-dir="app/libs/"/>
+      <source-file src="src/android/libs/com.coronis.sdk.serialdriver.api_2.0.0.jar" target-dir="app/libs/"/>
+      <source-file src="src/android/libs/com.coronis.sdk.serialdriver.rs232driver_2.1.0.jar" target-dir="app/libs/"/>
+      <source-file src="src/android/libs/android-support-v4.jar" target-dir="app/libs/"/>
+   </platform>
+</plugin>
